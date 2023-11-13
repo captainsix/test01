@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 1. List의 세터 인젝션 -->
+	<bean id="listBean" class="collection.ioc.ListBean">
+		<property name="addressList">
+			<list>
+				<value>서울시 종로구 종로1가</value>
+				<value>서울시 강남구 역삼동</value>
+				<value>서울시 강북구 성남동</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 2. Set의 세터 인젝션 -->
+	<bean id="setBean" class="collection.ioc.SetBean"> 
+		<property name="addressSet">
+			<set>
+				<value>부산시 북구 해운대</value>
+				<value>부산시 남구 다대동</value>
+				<value>부산시 중구 자갈치동</value>
+			</set>
+		</property>
+	</bean>
+	
+	<!-- 3. Map의 세터 인젝션 -->
+	<bean id="mapBean" class="collection.ioc.MapBean">
+		<property name="addressMap">
+			<map>
+				<entry>
+					<key><value>김봉석</value></key>
+					<value>인천시 북구 해1동</value>
+				</entry>
+				<entry>
+					<key><value>장희수</value></key>
+					<value>인천시 남구 달2동</value>
+				</entry>
+				<entry>
+					<key><value>이강현</value></key>
+					<value>인천시 동구 구3동</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<!--  4. Properties의 세터 인젝션 -->
+	<bean id="propBean" class="collection.ioc.PropertiesBean">
+		<property name="addressProp">
+			<props>
+				<prop key="장일만">부천시 중구 부1동</prop>
+				<prop key="백상일">부천시 남구 구2동</prop>
+				<prop key="천송이">부천시 북구 상3동</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>
